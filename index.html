@@ -9,6 +9,27 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <style>
+        .form {
+            display: flex !important;
+        }
+
+        .form-group {
+            margin: 0 1rem;
+        }
+
+        button {
+
+            margin: 0 1rem;
+        }
+
+        table {
+            border-radius: 1.2rem !important;
+        }
+
+        tbody {
+            background-color: rgb(6, 143, 177);
+        }
+
         @media (max-width: 1224px) {
             .card-results {
                 flex-direction: column;
@@ -29,8 +50,8 @@
 <body>
 
     <nav class="navbar" style="border-bottom: 1px solid #eee;">
-        <div class="container">
-            <img src="./logo.png" class="navbar-brand" width="65px">
+        <div class="container d-flex justify-content-center">
+            <img src="./logo.png" class="navbar-brand" width="85px">
         </div>
     </nav>
 
@@ -40,47 +61,49 @@
                 <div class="card-header text-white" style="background: rgb(7, 115, 177);">
                     <h3>Calcular orçamento</h3>
                 </div>
-                <div class="card-results d-flex">
-                    <div class="card-body w-50">
-                        <form name="formUser">
-                            <div class="form-group">
-                                <legend>Base (CM)</legend>
-                                <div class="input-group mb-3">
-                                    <input type="number" class="form-control" id="base" name="base" required>
-                                    <div class="input-group-append">
-                                        <button onclick="copyBase()" class="input-group-text" id="basic-addon2"><i
-                                                class="far fa-clone"></i></button>
+                <div class="card-results d-flex flex-column">
+                    <div class="card-body">
+                        <form name="formUser d-flex">
+                            <div class="form">
+                                <div class="form-group ">
+                                    <legend>Base (CM)</legend>
+                                    <div class="input-group mb-3">
+                                        <input type="number" class="form-control" id="base" name="base" required>
+                                        <div class="input-group-append">
+                                            <button onclick="copyBase()" class="input-group-text" id="basic-addon2"><i
+                                                    class="far fa-clone"></i></button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <legend>Altura (CM)</legend>
-                                <div class="input-group mb-3">
-                                    <input type="number" class="form-control" name="altura" id="altura" required>
-                                    <div onclick="copyAltura()" class="input-group-append">
-                                        <button class="input-group-text" id="basic-addon2"><i
-                                                class="far fa-clone"></i></button>
+                                <div class="form-group ">
+                                    <legend>Altura (CM)</legend>
+                                    <div class="input-group mb-3">
+                                        <input type="number" class="form-control" name="altura" id="altura" required>
+                                        <div onclick="copyAltura()" class="input-group-append">
+                                            <button class="input-group-text" id="basic-addon2"><i
+                                                    class="far fa-clone"></i></button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <legend>Quantidade</legend>
-                                <div class="input-group mb-3">
-                                    <input type="number" class="form-control" name="quantidade" id="quantidade"
-                                        required>
-                                    <div onclick="copyQuantidade()" class="input-group-append">
-                                        <button class="input-group-text" id="basic-addon2"><i
-                                                class="far fa-clone"></i></button>
+                                <div class="form-group ">
+                                    <legend>Quantidade</legend>
+                                    <div class="input-group mb-3">
+                                        <input type="number" class="form-control" name="quantidade" id="quantidade"
+                                            required>
+                                        <div onclick="copyQuantidade()" class="input-group-append">
+                                            <button class="input-group-text" id="basic-addon2"><i
+                                                    class="far fa-clone"></i></button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <legend>Margem (CM)</legend>
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" name="margem" id="margem">
-                                    <div onclick="copyMargem()" class="input-group-append">
-                                        <button class="input-group-text" id="basic-addon2"><i
-                                                class="far fa-clone"></i></button>
+                                <div class="form-group ">
+                                    <legend>Margem (CM)</legend>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" name="margem" id="margem">
+                                        <div onclick="copyMargem()" class="input-group-append">
+                                            <button class="input-group-text" id="basic-addon2"><i
+                                                    class="far fa-clone"></i></button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -89,10 +112,11 @@
                                 Calcular</button>
                         </form>
                     </div>
-                    <div class="card-body w-50 d-flex justify-content-center flex-column
+                    <div class="card-body w-100 d-flex justify-content-center flex-column
                     align-items-center">
                         <div class="table-responsive">
-                            <table class="table table-bordered text-white" style="background: rgb(7, 115, 177);">
+                            <table class="table table-bordered text-white"
+                                style="background: rgb(7, 115, 177); border-radius: 20px; overflow: hidden;">
                                 <thead>
                                     <tr>
                                         <th scope="col">Bobina</th>
