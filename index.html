@@ -229,7 +229,7 @@
             let altura2 = linhas * (altura + margem) - margem;
             let quantidadeTotal = linhas * colunas;
             let area = (altura2 * bobina1) / 10000;
-            let aproveitamento = ((colunas * base) / bobina1) * 100;
+            let aproveitamento = ((colunas * (base + margem) - margem) / bobina1) * 100;
 
             let calc2 = base + margem
             let colunas2
@@ -244,7 +244,7 @@
             let altura3 = linhas2 * (altura + margem) - margem;
             let quantidadeTotal2 = linhas2 * colunas2;
             let area2 = (altura3 * bobina2) / 10000;
-            let aproveitamento2 = ((colunas2 * base) / bobina2) * 100;
+            let aproveitamento2 = ((colunas2 * (base + margem) - margem) / bobina2) * 100;
 
             let bobinaIdeal = (area, area2, aproveitamento) => {
 
