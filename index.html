@@ -74,90 +74,79 @@
                     <div class="card-body">
                         <form class="form" name="formUser">
                             <div id="rr" style="display: flex;">
-                                <div class="form-group ">
+                                <div class="form-group w-25">
                                     <legend>Base (CM)</legend>
-                                    <div class="input-group mb-3">
-                                        <input type="number" class="form-control" id="base" name="base" required>
-                                        <div class="input-group-append">
-                                            <button onclick="copyBase()" class="input-group-text" id="basic-addon2"><i
-                                                    class="far fa-clone"></i></button>
-                                        </div>
-                                    </div>
+
+                                    <input type="number" class="form-control" id="base" name="base" required>
+
                                 </div>
-                                <div class="form-group ">
+
+                                <div class="form-group w-25">
                                     <legend>Altura (CM)</legend>
-                                    <div class="input-group mb-3">
-                                        <input type="number" class="form-control" name="altura" id="altura" required>
-                                        <div onclick="copyAltura()" class="input-group-append">
-                                            <button class="input-group-text" id="basic-addon2"><i
-                                                    class="far fa-clone"></i></button>
-                                        </div>
-                                    </div>
+
+                                    <input type="number" class="form-control" name="altura" id="altura" required>
+
                                 </div>
-                                <div class="form-group ">
+
+                                <div class="form-group w-25">
                                     <legend>Quantidade</legend>
-                                    <div class="input-group mb-3">
-                                        <input type="number" class="form-control" name="quantidade" id="quantidade"
-                                            required>
-                                        <div onclick="copyQuantidade()" class="input-group-append">
-                                            <button class="input-group-text" id="basic-addon2"><i
-                                                    class="far fa-clone"></i></button>
-                                        </div>
-                                    </div>
+
+                                    <input type="number" class="form-control" name="quantidade" id="quantidade"
+                                        required>
+
                                 </div>
-                                <div class="form-group ">
+                                <div class="form-group w-25">
                                     <legend>Margem (CM)</legend>
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control" name="margem" id="margem"
-                                            placeholder="A margem padrão é 0.5">
-                                        <div onclick="copyMargem()" class="input-group-append">
-                                            <button class="input-group-text" id="basic-addon2"><i
-                                                    class="far fa-clone"></i></button>
-                                        </div>
-                                    </div>
+                                    <input type="text" class="form-control" name="margem" id="margem"
+                                        placeholder="Minímo: 0.5">
                                 </div>
                             </div>
-                            <button onclick="calcular1()" style="background: rgb(7, 115, 177); display:inline-block;"
-                                class="btn text-white font-weight-bold" type="button">
-                                Calcular</button>
-                        </form>
                     </div>
-                    <div class="card-body w-100 d-flex justify-content-center flex-column
-                    align-items-center">
-                        <div class="table-responsive">
-                            <table class="table table-bordered text-white"
-                                style="background: rgb(7, 115, 177); border-radius: 20px; overflow: hidden;">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Bobina</th>
-                                        <th scope="col">Aproveitamento</th>
-                                        <th scope="col">Quantidade Total</th>
-                                        <th scope="col">Altura</th>
-                                        <th scope="col">Bobina Ideal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
 
-                                        <td>96</td>
-                                        <td id="aproveitamento">%</td>
-                                        <td id="quantidadeTotal"></td>
-                                        <td id="altura2"></td>
-                                        <td rowspan="2" id="bobinaIdeal"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>117</td>
-                                        <td id="aproveitamento2">%</td>
-                                        <td id="quantidadeTotal2"></td>
-                                        <td id="altura3"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+
+                    <button onclick="calcular1()"
+                        style="background: rgb(7, 115, 177); margin: 0 2rem;display:inline-block;"
+                        class="btn text-white font-weight-bold" type="button">
+                        Calcular</button>
+                    </form>
+                </div>
+                <div class="card-body w-100 d-flex justify-content-center flex-column
+                    align-items-center">
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-white"
+                            style="background: rgb(7, 115, 177); border-radius: 20px; overflow: hidden;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Bobina</th>
+                                    <th scope="col">Aproveitamento</th>
+                                    <th scope="col">Quantidade Total</th>
+                                    <th scope="col">Altura</th>
+                                    <th scope="col">Bobina Ideal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+
+                                    <td>96 cm</td>
+                                    <td id="aproveitamento">%</td>
+                                    <td id="quantidadeTotal"></td>
+                                    <td id="altura2"></td>
+                                    <td style="text-align: center; vertical-align: middle;font-size: 2rem;font-weight: bold;"
+                                        rowspan="2" id="bobinaIdeal"></td>
+                                </tr>
+                                <tr>
+                                    <td>117 cm</td>
+                                    <td id="aproveitamento2">%</td>
+                                    <td id="quantidadeTotal2"></td>
+                                    <td id="altura3"></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- Footer -->
     <footer class="page-footer font-small blue">
@@ -253,9 +242,9 @@
                 bobina2 = 117;
 
                 if (area <= area2 && area <= bobina1 && aproveitamento <= 100) {
-                    return bobina1
+                    return bobina1 + " cm"
                 } else {
-                    return bobina2
+                    return bobina2 + "cm"
                 }
             }
 
@@ -269,13 +258,13 @@
             }
 
             resultado1.innerHTML = apr(aproveitamento)
-            resultado2.innerHTML = quantidadeTotal
-            resultado3.innerHTML = altura2
+            resultado2.innerHTML = quantidadeTotal + " Unidades"
+            resultado3.innerHTML = altura2 + " cm"
             bobinaIdealR.innerHTML = bobinaIdeal(area, area2, aproveitamento)
 
             resultado4.innerHTML = `${aproveitamento2.toFixed(2)}%`
-            resultado5.innerHTML = quantidadeTotal2
-            resultado6.innerHTML = altura3
+            resultado5.innerHTML = quantidadeTotal2 + " Unidades"
+            resultado6.innerHTML = altura3 + " cm"
 
             console.log(colunas2, linhas2)
 
