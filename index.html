@@ -10,7 +10,8 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <style>
         .form {
-            display: flex !important;
+            display: flex;
+            flex-direction: column;
         }
 
         .form-group {
@@ -67,8 +68,8 @@
                 </div>
                 <div class="card-results d-flex flex-column">
                     <div class="card-body">
-                        <form name="formUser d-flex">
-                            <div class="form">
+                        <form class="form" name="formUser">
+                            <div style="display: flex;">
                                 <div class="form-group ">
                                     <legend>Base (CM)</legend>
                                     <div class="input-group mb-3">
@@ -111,7 +112,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button onclick="calcular()" style="background: rgb(7, 115, 177);"
+                            <button onclick="calcular1()" style="background: rgb(7, 115, 177); display:inline-block;"
                                 class="btn text-white font-weight-bold" type="button">
                                 Calcular</button>
                         </form>
@@ -166,8 +167,8 @@
     </footer>
     <!-- Footer -->
     <script>
-        function calcular() {
-
+        function calcular1() {
+            console.log("AA")
             let base = parseInt(formUser.base.value)
             let altura = parseInt(formUser.altura.value)
             let quantidade = parseInt(formUser.quantidade.value)
